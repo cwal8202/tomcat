@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        안녕하세요
+    </p>
+</body>
+<script>
+    function params() {
+        let sum = 0;
+        for (let i = 0; i < arguments.length; i++) {
+            // console.log(arguments[i]);
+            sum += arguments[i];
+        }
+        console.log(sum);
+    }
+
+    params(1,2,3,4,5,6,7,8,9);
+
+    function testDefault(a = 10) {  // 파라미터의 영역으로 값이 전달이 안될때 a = 10으로 하겠다는 뜻
+        console.log(a);
+    }
+
+    testDefault(100);
+    testDefault();
+
+    // myFunc(10, 15);
+    // let myFunc = function (a, b) {
+    //     console.log(a + b);
+    // }   
+
+    // hello("최장호");
+    // function hello(name) {
+    //     console.log(name + "님 안녕하세요");
+    // }
+
+    // hello(0);
+
+    // hello(null);
+
+    // hello();
+
+    // hello("a", "b", "c");
+</script>
+</html>

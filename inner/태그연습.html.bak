@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset = "UTF-8" />
+ <title>테그 연습하기</title>
+ <style>
+	header {
+		background-color : #a9a9a9;
+		border : 1px solid red;
+	}
+	/* header > h1 */
+	/* header h1 */
+	#white-heading {
+		color : #fff;
+		text-align : center;
+	}
+	
+	.red-heading {
+		color : red;
+	}
+ </style>
+</head>
+<body>
+  <header>
+		<div>
+			<h1 id = "white-heading" class = "red-heading">헤더 영역</h1>
+			<h1 class = "red-heading">헤딩이 두개면?</h1>
+		<div>
+	</header>
+	
+	<nav>
+		<ul>
+			<li>아이템</li>
+			<li>아이템</li>
+			<li>아이템</li>
+		</ul>
+		<!--
+		<ol>
+			<li>아이템</li>
+			<li>아이템</li>
+			<li>아이템</li>
+		</ol>
+		-->
+	</nav>
+	
+	
+	<main class = "red-heading">메인영역</main>
+	<aside>사이드 영역</aside>
+	<footer>푸터 영역</footer>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>방가방가</p>
+</body>
+<script>
+    let arrowFunc = (x) => {
+        console.log(x);
+    }
+
+    arrowFunc("test arrow");
+
+    let say = () => {
+        console.log("say");
+        return "반환값";
+    }
+
+    let result = say();
+    console.log(result);
+
+    let multiply = (a, b) => a * b;
+    let m = multiply(10, 5);
+    console.log(m);
+</script>
+</html>

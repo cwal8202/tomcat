@@ -1,0 +1,189 @@
+자바 스크립트
+window.alert("hello world"); = alert는 경고창 나타내는것
+cosole.log(""); = log창에 값이 입력된다.
+
+자바스크립트는 타입을 선언하지 않는다.
+
+그냥 var (변수).
+
+자바스크립트는 compile이라는 선행 단계가 없다.
+브라우저가 한줄 한줄씩 읽는다
+자바스크립트는 인터프리터 언어다.
+
+undefined는 null과 다르다.
+
+자바스크립트는 동적 타이핑이다.
+
+변수를 동적으로 설정한다.
+
+자바스크립트는 객체지향 언어다.
+    var myVar = 10;
+
+    console.log(myVar);    
+
+    myVar = "changed";
+
+    console.log(myVar);
+이렇게 써도 가능하게 된다. 
+
+
+모든걸 보안한거
+type 스크립트
+스트롱 언어 + 컴파일 가능
+
+자바스크립트는 객체지향 언어이다.
+
+자바스크립트 숫자와 비교할 경우 문자를 숫자로 취급한다.
+'===' 은 "엄격한 비교"다. 타입까지 비교해서 보여준다.
+NaN(not a number)은 어떤것들과 비교해도 false이다.
+하나의 값이 NaN인지 비교할려면 console.log(isNaN(NaN)); 이렇게 쓰면된다.
+
+(모든객체가능)두개의 값을 비교할때 console.log(Object.is(NaN, NaN));을 쓴다. 이떄
+NaN또한 비교 가능하다 Object.is 또한 "엄격한 비교"이다!
+
+자바스크립트는 지역변수를 let으로 써야지 인식된다.
+*보통 특별한 상황이 아니면 let을 쓴다.*
+만약 {}안에 var를 썼다면 지역변수가 아니라서 인식이 된다.
+상수 또한 가능하다. 상수는 const를 써야한다. const또한 지역변수이다.
+
+*자바스크립트의 조건문 참,거짓*
+자바스크립트는 값(ex) "asdf")이 있는 문자열은 true 값이 없는 문자열은 false다.
+값이 있는 숫자도 true, 숫자가 0이면 false다.
+{}도 참, []도 참. 즉 객체가 참조하는게 null이 아니면 참이다.
+undefined, false, NaN, "", 0이 아니면 다 true다.
+Infinity = 무한이다. 근데 이건 true구나...!
+
+let result = true ? "왼쪽" : "오른쪽"; => 3항연산자도 된다!
+let nullish = null ?? "hello";   => 왼쪽값이 null이면 오른쪽 값을 보여준다!
+
+&&연산자는 첫번째로 false인 값을 찾아낸다. 만약 false가 아니면 마지막 true가 값이 된다.
+
+||연산자는 첫번째로 true인 값을 찾아낸다.
+만약 다 false면 제일 마지막 false가 나온다.
+
+switch 또한 엄격한 비교이다.
+case에서 연산비교가 가능하다.
+
+javaScript는 브라우저 안에서만 가능하다.
+만약 브라우저를 벗어나도 가능하게 한다면(flash가 그랬다)
+http는 모든 문자를 읽는 것이기 때문에 만약 페이지에 악성코드를 넣으면
+그 코드를 전부 읽기 때문에 악성코드가 다 적용된다.
+javascript는 http주소만 안다면 내 자원소스에 접근이 가능하다.
+
+*함수*
+자바스크립트 function에선 타입을 명시할 필요가 없다.
+또한 먼저 함수를 선언하지 않고 호출만 해도 오류가 안난다.
+스크립트 영역에서 먼저 실행이 된다. '함수 선언 호이스팅'
+ex)  function hello(name) {
+        console.log(name + "님 안녕하세요");
+    }
+이때 hello(); 여기에 값을 넣으면 된다. null, false, true등 모든 값 들어간다.
+
+hello("a", "b", "c"); 로 하면 하나의 값만 들어간다.
+
+*함수-1(let과 함수)*
+변수 자리에 함수가 들어간다.
+변수 자리에는 객체가 들어갈수 있는데 
+let test = function 이라고 했을때 function 자체를 객체로 인식한다.
+하지만 함수처럼 호이스팅이 되는것이 아니기때문에 선언을 먼저 하지 않고 호출을 하면 오류가 난다.
+
+*함수-2(arguments)*
+arguments 배열의 형태를 가지고 있다.
+
+*함수-3(Default function)*
+function testDefault(a = 10) { 
+   console.log(a);
+}
+파라미터의 영역으로 값이 전달이 안될때 a = 10으로 하겠다는 뜻
+
+*함수-4(return)*
+function sum(a, b) {
+    if (a > b) {
+        return a + b;
+    } else {
+        return "b가 a보다 큽니다";
+    }
+}
+이처럼 return타입은 명시되어 있지 않기 때문에 모든 타입 반환이 가능하다
+*****이런 함수 반환값들을 사용 안하는게 좋다. 너무 헷가리고 어려워서 안쓰는게 더 좋다!*****
+
+*함수-5(undefined로 뜨는 경우)
+return키워드가 없거나 아무것도 적지 않은 함수 ex) function test(){}
+이와 같은 경우는 'undefined'가 뜬다. 자바처럼 컴파일 에러가 뜨는것이 아니라서 undefined가 뜨면
+return을 안했거나 잘못된 경우일 수 있다.
+
+*함수-6(arrowFunc =>)*
+let arrowFunc = function = (파라미터) 대신해서 let arrowFunc = (x) => 이 함수 표시가 된다.
+변수에 초기화 할때만 가능하다. 즉 단독으로 사용하지 못한다.
+let say = () => {
+    console.log("say");
+}
+이처럼 빈괄호에서도 가능하다.
+
+*함수-7(let multiply = (a, b) => a * b;)*
+let multiply = (a, b) => a * b;
+{} 중괄호를 없애고 작성을 하면 그 값을 반환을 해준다.
+
+*함수-8(함수가 함수를 전달받는다? - callback 함수)*
+다른 함수가 실행을 끝낸 뒤 실행되는 callback되는 함수 를 말한다.
+function eat(act) { 
+    console.log("밥 먹구");
+    act();
+}
+함수 전달값으로 함수를 전달받는다. 함수를 전달받으면 그 함수가 호출된다.
+함수를 파라미터 값으로 가능하다. 그리고 파라미터로 함수를 넣으면 해당 함수가 호출이 된다.
+
+*함수-9(이벤트 )*
+html과 자바스크립트 객체가 연결 될 수 있게 하는 것이 DOM (document object model)이다.
+DOM객체를 통해서 html 요소와 객체가 연결된다.
+
+ex)
+<body>
+    <button id = "mybtn">눌러봐</button>
+</body>
+<script>
+    function myListener (e) {
+        alert("이벤트일어남");
+        console.log(e);
+    }
+
+    // mybtn.onclick = myListener;
+    let elem = document.getElementById("mybtn");
+    elem.addEventListener("click", myListener);
+</script>
+
+
+mybtn이라는 버튼을 만든다(자바에서 컴포넌트 JButton이라 생각해보자)
+mybtn을 elem이라는 dom 객체로 지정한 후
+elem의 "click" 이벤트리스너로 myListener가 실행되게 한다.
+
+ex)  let testbutton = document.getElementById("testbutton");
+    testbutton.addEventListener("mouseup", function (e) {
+        console.log(inputText.value);
+    });
+
+
+이 문장은 ID가 "testbutton"인 요소를 testbutton이라는 DOM의 요소객체로 만든다.
+그 후 testbutton의 이벤트리스너를 추가한다. "mouseup"이라는 타입의 이벤트가 일어날 때 일어나는 함수로
+'function (e) = 콘솔창에 입력창의 값을 보여주기.' 라는 익명 함수를 나오게 한다.
+이때 익명 함수가 callback함수이다.
+다른 함수가 실행을 끝낸 뒤 실행되는 callback되는 함수 를 말한다.
+
+-요소안에 텍스트 넣기
+changeBtn.addEventListener("click", function(e) {
+    mydiv.innerText = "<strong>텍스트값을 변경하였습니다.</strong>";
+});
+innerText는 텍스트 형태로 값을 넣는것이다. 그래서 text로 인식한다.
+'mydiv.innerHTML' 로 변경하면 인식이 된다. 하지만 이렇게 태그를 넣는 경우는 흔치 않을 것이다.
+
+-텍스트에 css넣기 + toggle
+"red"라는 아이디를 가진 class를 classList를 땠다 붙였다 할수 있다. 이때 toggle을 쓴다.
+colorBtn.addEventListener("click", function(e) {
+    mydiv.classList.toggle("red");
+});
+
+-timeout
+setTimeout(function() {
+    console.log("3초 후에 출력");
+}, 3000);
+밀리세컨즈 단위로 작성된다. miliseconds

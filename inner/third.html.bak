@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset = "UTF-8" />
+ <title>세번째 페이지 </title>
+</head>
+<body>
+   <p>여기도 이미지 표현 해봅시다</p>
+   <img src = "../images/코디셋.png">
+   <img src = "https://ssl.pstatic.net/melona/libs/1405/1405368/7474422eb92311187be5_20220801164559875.jpg">
+   <img>
+   <p>첫번째 두번째 페이지로 이동할 수 있는 <br />
+   하이퍼링크도 만들어 봅시다</p>
+   <a href = "/first/first.html">첫번째 페이지로</a>
+   <a href = "../second.html">두번째 페이지로</a>
+</body>
+</html>

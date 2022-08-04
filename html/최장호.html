@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset = "UTF-8" />
+   <title>로그인 페이쥐</title>
+   <style>
+		.container {
+			padding : 0;
+			width : 1200px;
+			margin : 0 auto;
+		}
+		form {
+			display : flex;
+			width : 600px;
+			margin : 0 auto;
+			border : 1px solid #ff0;
+			flex-direction : column;
+			justify-content: center
+		}
+		label {
+			display : flex;
+			border : 1px solid #f00;
+		}
+		label > input {
+			border : 0;
+			flex : 1;
+		}
+
+
+label > input {
+    background-image: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-256.png);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+ 
+
+    padding: 5px 5px;
+    text-indent: 30px;
+    
+    width: 120px;
+}
+input:focus {
+	 background-image: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-256.png);
+  
+    background-position: -10px center;
+    text-indent: 0;
+    width: 50%;
+}
+
+		
+   </style>
+   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+</head>
+<body>
+	<header>헤드입니다</header>
+	<main>
+		<div class = container>
+			<span>메인이구요</span>
+			<p>여기는 이미지가 들어갑니다</p>
+				<form action="">
+					<label class = "loginpage">
+						<i class="xi-user-o"></i> 
+						<input type = "text" name = "idtext" placeholder = "아이디를 입력하세요"/>
+					</label>
+					<label class = "loginpage">
+						<i class="xi-lock-o"></i>
+					<input type = "password" name = "pwtext" placeholder = "비밀번호를 입력하세요"/>
+					</label>
+					<label>
+						<input type = "checkbox" name = "mycheck" value = "1st"/>1번
+						<p>adsf</p>
+					</label>
+					<input class = "loginclick" type = "submit" value = "로그인"/>
+					
+				</form>
+			메인 끝입니다
+		</div>
+	</main>
+	<footer>
+	푸터이구여
+	
+	</br>푸터 끝입니다
+	</footer>
+<body>
+</html>
