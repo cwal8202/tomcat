@@ -1,0 +1,38 @@
+웹 서버를 이용하기 위해
+웹 서버 구축 환경을 다운받아야 한다.
+1. server = apache - tomcat
+2. servlet, jsp 등의 플러그인 다운로드 = JEE
+
+
+3조 서비스, DB배포하기
+
+
+
+브라우저의 클라이언트는 '요청을 보낸다' 밖에 못한다. 
+
+server side rendering
+
+was 중 하나가 tomcat
+
+
+jsp파일 이름 짓고 만들어준다.
+
+page directive
+jsp의 설정이 있다.
+
+script let 영어에서 자바 코드를 적을수 있다.
+
+<%!  >   =     선언부. 메소드같은거 선언할때 쓰는것. 제일 위에  쓴다.
+
+
+<form action = "이동할 주소"> submit 되었을때 가는 주소  
+
+파라미터 값들이 get방식일때 주소에 담겨 온다.
+한글표현이 가능하지 않으므로
+url 형태도 오는데 url decoding을 해줘야 한다.
+post방식은 body영역에 그 정보가 담긴다. body를 읽고 해석해야 한다.
+
+
+status 200번대는 OK
+400번대는 사용자가 잘못했을떄
+500번대는 서버가 잘못되었을때

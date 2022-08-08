@@ -1,0 +1,111 @@
+Thread
+Thread 1개  = 동시에 일할 수 있는 능력이 하나밖에 없다.
+GUI thread는 보통 1개다.
+
+'작업'이라는 공간을 계속해서 살펴보는 동작이다.
+클릭 이벤트 처리하기, 1초마다 텍스트 변경하기가 순서대로 쌓이게 된다.
+
+while true 같이 작업이 오래 걸리면 다른일을 할 수 없게 된다.
+
+한개로 여러일을 해야 하니깐 작업 공간에 해야 할 일을 나열해서 하나씩 해결하고 있다.
+
+** Eclipse IDE for Enterprise Java Developers **  
+web plugin이 깔려있다. 
+
+window - show view - servers
+
+
+no servers are available. click this link to craet
+
+tomcat9 version -> tomcat파일 위치 선택 -> finish
+
+eclipse에서 tomcat을 제어하고 끄고 킬 수 잇다.
+카탈리나 홈의 실제 톰캣을 제어하는게 아닌 카탈리나 베이스.
+같은 환경이지만 다른 위치에서 tomcat을 구동할 수 있게끔 하나의 instance가 생성된다.
+tomcat이 분신술...?
+
+tomcat을 eclipse에서 키고 끌 수 있게 되었다!
+
+*웹 프로젝트 만드는법
+project -> Dynamic Web Project
+
+target runtime 설정 tomcat으로 되어있는지 확인하기!
+
+generator 어쩌구 체크하기
+
+만약 체크 안했으면
+
+프로젝트 우클릭 -> java EE tools -> Generate Deployment클릭 하면 파일 생성됨.
+
+*html 파일 만들기
+프로젝트 우클릭 -> html file -> 이름설정.html
+
+*접속하는법
+localhost:8080/context루트/파일이름.html
+
+*기본값
+http://localhost:8080/context_root/
+기본값은 tomcat이 설정해놓는다.
+확인 하는 법 : webcontent안에 web.xml -> source 들어가면 확인 가능하다.
+
+*jsp 파일 만들기
+프로젝트 우클릭 -> jsp file -> 이름설정.html
+- jsp파일 생성시 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 이 부분   
+      => page directive : jsp에서 필요한 설정들을 미리 해두는 공간
+   - jsp파일은 궁극적으로 html 문서
+
+* <%  %>
+<% 안에는 자바 코드를 쓸 수 있습니다! %>
+
+*쓰레드에 대하여
+한명이 접속하면 하나의 쓰레드가 생성된다.
+사용자가 요청하면 jsp의 쓰레드를 확인한다.
+
+*JSP 표현식
+<%= java.time.LocalTime.now() %>
+안에 있는 값을 문자열 형태로 적는다.
+실행흘므은 자바의 LocalTime클래스의 now메소드가 생성된다.
+LocalTime의 toString이 호출된다.
+
+*JSP실행흐름
+JSP는 실행흐름이 page directive를 인식 후
+html영역은 html로 인식한다.
+그 후 <% 자바코드 %>를 인식하며 
+<%= 표현식 %>의 영역은 html문서에 표현이 된다.
+
+*JSP 주석
+<%-- 주석처리할 내용 --%>
+
+*JSP java 메소드출력
+<% 
+	int sum = 0;
+	for (int i = 0; i <= 10; i++) {
+		sum += i;
+	}
+%>
+<p> 0 ~ 10 까지의 합 : <%= sum %></p>
+
+*JSP 선언부
+<%! %>
+
+*request객체에 대하여
+요청을 할때 마다 request객체가 새로 생성된다.
+tomcat에서 요청을 확인하는 이유는 
+요청에 따라서 그때그때 마다 동적인 처리를 하기위함.
+get 방식은 body가 없다.
+get 방식은 요청에 대한 표시를 주소에 표시한다.
+
+* getParameterValues 
+파라미터를 배열로 담는다.
+
+* method
+- method : 사용자가 submit을 눌렀을 때 어떠한 방식으로 요청을 만들지 명시
+① get : body가 없고 parmeter가 사용자가 요청한 주소에 붙어서 표현이 됨 -> 사용자에게 드러남
+② post : body에 사용자의 요청 정보가 담김(요청 정보 길이 = body의 길이값)
+
+* <form action="/context_root/requestInfo.jsp" method = "post">
+기본적으로 method = "get"이다. post방식 같은경우 주소창에 ?가 없어진다.
+post 방식은 body가 있다. 
+
+* 한글이 이상하게 나와요~!
+한글은 URL Encoding을 한다.

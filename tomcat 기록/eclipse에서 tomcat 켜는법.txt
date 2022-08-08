@@ -1,0 +1,28 @@
+** Eclipse IDE for Enterprise Java Developers **  
+web plugin이 깔려있다. 
+
+window - show view - servers
+
+
+no servers are available. click this link to craet
+
+tomcat9 version -> tomcat파일 위치 선택 -> finish
+
+eclipse에서 tomcat을 제어하고 끄고 킬 수 잇다.
+카탈리나 홈의 실제 톰캣을 제어하는게 아닌 카탈리나 베이스.
+같은 환경이지만 다른 위치에서 tomcat을 구동할 수 있게끔 하나의 instance가 생성된다.
+tomcat이 분신술...?
+
+tomcat을 eclipse에서 키고 끌 수 있게 되었다!
+
+
+*웹 프로젝트 만드는법
+project -> Dynamic Web Project
+
+target runtime 설정 tomcat으로 되어있는지 확인하기!
+
+generator 어쩌구 체크하기
+
+만약 체크 안했으면
+
+프로젝트 우클릭 -> java EE tools -> Generate Deployment클릭 하면 파일 생성됨.
