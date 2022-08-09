@@ -10,9 +10,10 @@
 	<!-- 
 		입력폼 사용자 나이, 이름 필수!!
 	 -->
-	 <form>
-		 <label>이름 : <input type = "text" name = "name" required/></label>
+	 <form action="./personresult.jsp">
+		 <label>이름 : <input type = "text" name = "name" required /></label>
 		 <label>나이 : <input type = "number" name = "age" required/></label>
+	
 		 <input type = "submit" value = "전송"/>
 	</form>
 </body>

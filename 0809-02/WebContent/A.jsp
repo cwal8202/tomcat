@@ -1,0 +1,20 @@
+<%@page import="java.util.Date"%>
+<% Date now = new Date(); %>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>A</h1>
+<% Object result = request.getAttribute("result"); %>
+<p><%= result %></p>
+<%-- <%= now %>
+<br/>
+<%= java.time.LocalTime.now() %> --%>
+</body>
+</html>
