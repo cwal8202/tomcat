@@ -1,0 +1,24 @@
+application의 setter로 setAttribute가 있다
+getter로 getAttribute가 있다.
+
+request도 논리 흐름에서 값을 설정 및 꺼내올 수 있다.
+setAttribute, getAttribute가 있다.
+
+두개의 페이지를 만든 후 어플리케이션 scope와 다르게 request 객체 scope를 확인 해본 결과
+설정 된 값이 두번째 페이지에선 null이 된다.
+null이 된 이유는 각각의 요청에 의해서 요청객체가 새로 만들어 지기때문에
+첫번째 요청 객체는 사라지고 두번째 요청 객체가 응답해서 null이 된다.
+
+왜 굳이 페이지를 여러개 만들어서 했냐면
+데이터가 많고 복잡할때 페이지를 나눠서 적으면 편하겠다
+
+
+post에서 body에 값이 전달된다고 한다.
+
+이때 http body와 html body는 다르다.
+
+프로토콜 response의 body안에 html문서가 있다.
+
+한 페이지를 논리 흐름과 사용자에게 보여주는 흐름을 나눈것이다.
+한페이지에서 논리흐름과 결과 출력 흐름을 할 수 있는 것을
+논리 흐름과 사용자에게 보여주는 출력 흐름으로 나눈것.

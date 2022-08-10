@@ -1,0 +1,79 @@
+java resource 파일 안에 src안에 페키지 이름 설정 후 자바 파일 만들면
+jsp에서 import로 만들수 있다.
+
+${} el : JSP 페이지에서 출력을 도와준다.
+-el에 getter가 있는 속성이면 get쓰지 않고 이름만 쓰면 됨.(모든 객체 가능)
+
+	${ param.mytext } = <%= (String)request.getParameter("mytext"); %>
+	${ param.mynumber }
+
+
+page 영역을 다루는 scope
+session
+한번의 요청으로 다루는 request scope
+
+name만 적으면 알아서 찾아서 준다.
+
+request영역이 더 좁은 범위라서 req4를 먼저 나오게 한다.
+좁은 영역을 먼저 찾는다.
+
+page, request, session 다루는 scope 존재.
+app > session > Req > page 순으로 크다.
+
+
+
+* 반복문을 jsp에서 쓸려면??*
+*jstl jar 구글 검색 - 2번째 페이지
+https://mvnrepository.com/artifact/javax.servlet/jstl/1.2
+maven repository라고 검색해도 됨.
+
+jstl 1.2 다운해야함
+
+files 에서 jar클릭하면 됨
+
+jar파일 lib안에 넣고 
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
+이렇게 쓰면 됨.
+여기서 prefix는 뭐냐면 사용할 라이브러리를 어떤 이름으로 사용할지. 약간 변수명 처럼 이름 지정하는것.
+
+*	<c:forEach var="i" begin="1" end="10">
+		<p>${ i }</p>
+	</c:forEach>
+이렇게 태그로 반복문을 쓸 수 있다. el을 사용해서 바로 i로 쓰고 있다.
+
+el태그가 대체 뭐지...??	
+
+*if 문을 jsp에서 쓸려면??*
+<c:if test="${ i % 2 == 0 }">
+	<p>${ i }</p>
+</c:if>
+el태그를 조건식 적을때 쓴다.
+이때 <c:if>는 else가 없다.
+
+* if else를 jsp에서 쓸려면??
+<c:choose>
+	<c:when test="true">
+		<p>첫번째 조건이 참일때</p>
+	</c:when>
+	<c:when test="false">
+		<p>두번째 조건이 참일때</p>
+	</c:when>
+	<c:otherwise>
+		<p>모든 조건이 참이 아닐때</p>
+	</c:otherwise>
+</c:choose>
+
+
+choose에서 when과 otherwise에서만 if else가 가능하다.
+
+*request.setAttribute를 jsp로 쓸려면??*
+<% request.setAttribute("asdf", "zxcv"); %>
+<c:set var="jjj" value="value2" scope="request" />
+
+scope는 request범위면 request, app session 다 가능하다.
+
+*url
+한글 형식에 맞춰서 한글 	변환해서 주소에 출력해줌
+
+*<c:if test="${ not empty list }">
+{ empty 객체 }는 비어있으면 (null, "") true 안 비어 있으면 false
