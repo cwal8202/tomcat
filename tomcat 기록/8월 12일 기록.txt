@@ -1,0 +1,33 @@
+httpservlet에서 override로 service를 쓰지 않는다.
+대신 doPost와 doGet이 있다.
+
+Get 방식은 doGet만 하면 되고
+Post방식은 doGet에선 그냥 지정만 해주고
+doPost에 원래 service에 적었던거 그대로 적으면 된다.
+
+webXml에서 servlet name 과 url pattern 적는 대신
+
+java 클래스에서 @WebServlet(name = "testMethodServlet", urlPatterns = "/testMethod")로
+이름과 url을 지정할 수 있다.
+
+loadOnStartUp 
+순서를 줄수 있다. 순서대로 servlet을 생성 할 수 있다.
+
+*postman window 다운받기
+인터넷 하는 도구
+브라우저보다 다양한 요청을 볼 수 있다.
+
+*에러 났을때 에러 보여주는 페이지(자동 foward)
+에러가 나면 forward가 일어나고 자동으로 다른 페이지로 이동하게 한다.
+
+*쿠키는 응답할때 사용자에게 cookie를 담아서 보내준다.
+쿠키는 한글이 안된다. url해줘야함
+
+쿠키는 기간이 만료 되었을떄 삭제된다.
+
+쿠키는 브라우저에 드러나므로 민감한 정보이다. 그래서 사이트에서 쿠키를 허용하시겠습니까?를 물어본다
+쿠키를 주면 우리는 이제 그 Data를 관리하지 않아도 사용자의 쿠키에 들어가져 있으므로 속도가 더 빨라진다.
+
+1. 쿠키는 어디까지 저장되는가?
+2. 쿠키는 언제 저장되는가?
+원하는 타이밍에 저장되게 가능한가?
