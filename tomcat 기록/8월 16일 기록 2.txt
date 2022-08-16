@@ -1,0 +1,17 @@
+contextListener 에서
+contextInitialized은 웹어플리케이션이 시작될때 그 알람을 받는 리스너이다.
+
+
+HttpSessionBindingListener
+attribute 심을때 발생함
+
+Connection pool
+
+apache common dbcp2 - 2.9.0 - jar파일 다운로드
+
+내리다보면
+
+Compile Dependencies (3)
+Apache 2.0  commons-logging » commons-logging
+Apache 2.0  org.apache.commons » commons-pool2
+3번째꺼는 다운 x
