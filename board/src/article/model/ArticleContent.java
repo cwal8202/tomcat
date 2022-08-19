@@ -8,10 +8,10 @@ public class ArticleContent {
 		this.number = number;
 		this.content = content;
 	}
-	Integer getNumber() {
+	public Integer getNumber() {
 		return number;
 	}
-	String getContent() {
+	public String getContent() {
 		return content;
 	}
 	
