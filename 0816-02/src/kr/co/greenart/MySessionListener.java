@@ -39,3 +39,4 @@ public class MySessionListener implements HttpSessionBindingListener
 		System.out.println(event.getName() + " : " + event.getValue());
 	}
 }
+
